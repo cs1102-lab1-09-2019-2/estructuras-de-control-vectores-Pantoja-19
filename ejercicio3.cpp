@@ -24,6 +24,15 @@ vector<int> leerConsola() {
 }
 
 float mediana(vector<int> &lista) {
+	for (int i = 0; i < lista.size(); i++){
+		for (int j = 0; j < lista.size(); j++){
+			if (lista[i] < lista[j]){
+				int temp = lista[i];
+				lista[i] = lista[j];
+				lista[j] = temp;
+			}
+		}	
+	}
 	
     float mediana;
     int indice;

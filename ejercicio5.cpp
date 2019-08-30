@@ -24,21 +24,21 @@ using namespace std;
 
 int main() {
     float a, b, c, delta, x1, x2;
-    cout << "introduce los coeficientes de la funcin separado por espacios\n";
+    cout << "introduce los coeficientes de la funcion separado por espacios\n";
     cin >>a>>b>>c;
     delta = pow(b,2) - 4*a*c;
     if (a == 0 && b == 0)
     {
-		cout << "la ecuacion no tiene solucion";
+		cout << "la ecuacion no tiene solucion"<<"\n";
 	}
 	else if (a == 0)
 	{
 		x1 = (-1*c)/b;
-		cout << "la unica raiz de la ecuacion es: "<< x1;
+		cout << "la unica raiz de la ecuacion es: "<< x1<<"\n";
 	}
 	else if (delta < 0)
 	{
-		cout << "la ecuacion no tiene solucion";
+		cout << "la ecuacion no tiene solucion"<<"\n";
 	}
 	else
 	{
