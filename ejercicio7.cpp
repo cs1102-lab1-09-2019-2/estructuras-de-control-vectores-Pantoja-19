@@ -41,9 +41,76 @@ void mostrarMenu() {
     cout<<"  2.- Resta\n";
     cout<<"  3.- Multiplicar\n";
     cout<<"  4.- Dividir\n";
-    cout<<"  6.- Modulo\n";
+    cout<<"  5.- Modulo\n";
+}
+
+int sumar(int a, int b)
+{
+	int suma = a + b;
+	return suma;
+}
+
+int restar (int a, int b)
+{
+	int resta = a - b;
+	return resta;
+}
+
+int multiplicar(int a, int b)
+{
+	int producto = a*b;
+	return producto;
+}
+float dividir(int a, int b)
+{
+	if (b == 0){
+		throw invalid_argument ("No se puede dividir entre cero");
+	}
+	float cosiente = (float)a/b;
+	return cosiente;
+}
+int modulo (int a, int b)
+{
+	int modulo;
+	int cociente = a/b;
+	modulo = a - b*cociente;
+	return modulo;
 }
 
 int main() {
+
+	int eleccion,num1,num2;
+	int suma,resto,producto,residuo;
+	float cociente;
+	
+	mostrarMenu();
+	
+	cout <<"seleccione el numero de accion: ";
+	cin >> eleccion;
+	cout << "introduzca 2 numero enteros para operar, separados con espacios: ";
+	cin >> num1>>num2;
+	switch (eleccion)
+	{
+		case 1: suma = sumar(num1, num2);
+				cout << "la suma es: "<<suma<<"\n";
+				break;
+		case 2: resto = restar(num1, num2);
+				cout << "el resto es: "<<resto<<"\n";
+				break; 
+		case 3: producto = multiplicar(num1, num2);
+				cout <<"el producto es: "<<producto<<"\n";
+				break;
+		case 4: cociente = dividir(num1, num2);
+				cout <<"el cociente es: "<<cociente<<"\n";
+				break;
+		case 5: residuo = modulo(num1, num2);
+				cout <<"el modulo es: "<<residuo<<"\n";
+				break;
+		default:cout <<"el numero de accion seleccionado no existe!";
+				break;
+	}
     return 0;
 }
+
+
+

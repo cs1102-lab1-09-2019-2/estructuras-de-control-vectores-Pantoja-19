@@ -1,4 +1,4 @@
-/*
+ /*
  Dado una funcion cuadratica, donde los parametros a, b, y c son leidos por la consola.
  Calcular las soluciones basado en las siguientes reglas:
 
@@ -24,5 +24,26 @@ using namespace std;
 
 int main() {
     float a, b, c, delta, x1, x2;
-
+    cout << "introduce los coeficientes de la funcin separado por espacios\n";
+    cin >>a>>b>>c;
+    delta = pow(b,2) - 4*a*c;
+    if (a == 0 && b == 0)
+    {
+		cout << "la ecuacion no tiene solucion";
+	}
+	else if (a == 0)
+	{
+		x1 = (-1*c)/b;
+		cout << "la unica raiz de la ecuacion es: "<< x1;
+	}
+	else if (delta < 0)
+	{
+		cout << "la ecuacion no tiene solucion";
+	}
+	else
+	{
+		x1 = (-1*b + sqrt(pow(b,2)-4*a*c))*2*a;
+		x2 = (-1*b - sqrt(pow(b,2)-4*a*c))*2*a;
+		cout <<"las raices de la funcion son: \n"<<"raiz 1 = "<<x1<<"\nraiz 2 = "<<x2<<"\n";
+	}
 }
